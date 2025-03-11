@@ -3,87 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Álbum de Recuerdos</title>
+    <title>📖 Álbum de Recuerdos Interactivo</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+        
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(to right, #ffdde1, #ee9ca7);
             text-align: center;
-            padding: 20px;
-            color: #fff;
+            padding: 30px;
+            color: #333;
         }
         .album {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 30px;
         }
         .pagina {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
             max-width: 90%;
-            width: 400px;
+            width: 500px;
             text-align: center;
-            color: #333;
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
         .imagen {
             width: 100%;
-            max-height: 300px;
-            border-radius: 10px;
+            max-height: 350px;
+            border-radius: 15px;
             display: block;
-            margin-top: 10px;
+            margin-top: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
         }
         .boton {
             background: linear-gradient(to right, #ff758c, #ff7eb3);
             color: white;
             border: none;
-            padding: 12px 24px;
-            margin-top: 10px;
-            border-radius: 25px;
+            padding: 14px 28px;
+            margin-top: 15px;
+            border-radius: 30px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
             transition: transform 0.2s, background 0.3s ease;
         }
         .boton:hover {
-            transform: scale(1.05);
-            background: linear-gradient(to right, #ff5e78, #ff6f96);
+            transform: scale(1.07);
+            background: linear-gradient(to right, #ff4d6d, #ff7b89);
         }
         .hidden {
             display: none;
         }
+        .titulo {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #444;
+        }
+        .texto {
+            font-size: 18px;
+            color: #666;
+            font-style: italic;
+        }
+        .mensaje-final {
+            font-size: 20px;
+            color: #444;
+            font-style: normal;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
-    <h2>📸 Álbum de Recuerdos 💖</h2>
+    <h2 class="titulo">📖 Pequeño album de recuerdos</h2>
     <div class="album">
         <div class="pagina" id="pagina1">
-            <h3>Recuerdo 1</h3>
-            <p>Un día inolvidable juntos.</p>
-            <img src="imagen1.jpg" class="imagen">
+            <h3>✨ Recuerdo 1</h3>
+            <p class="texto">De las primeras fotos que nos tomamos cuando recien nos estabamos conciendo.</p>
+            <img src="./src/imagen1.jpg" class="imagen">
             <button class="boton" onclick="cambiarPagina(2)">Siguiente →</button>
         </div>
         
         <div class="pagina hidden" id="pagina2">
-            <h3>Recuerdo 2</h3>
-            <p>Una aventura que nunca olvidaré.</p>
-            <img src="imagen2.jpg" class="imagen">
+            <h3>🌍 Recuerdo 2</h3>
+            <p class="texto">Esa foto que utilizamos demasiado jaja, estaba bien quemada pero era de las unicas que nos gustaban ya que tambien no nos habíamos tomado muchas antes de que te fueras a Estados Unidos.</p>
+            <img src="./src/imagen2.jpg" class="imagen">
             <button class="boton" onclick="cambiarPagina(3)">Siguiente →</button>
         </div>
         
         <div class="pagina hidden" id="pagina3">
-            <h3>Recuerdo 3</h3>
-            <p>Un momento de risa y felicidad.</p>
-            <img src="imagen3.jpg" class="imagen">
+            <h3>😂 Recuerdo 3</h3>
+            <p class="texto">El primer detalle que salió de mí a darle una persona, nunca había regalado algo a alguien, nunca se me había dado, nunca lo había hecho y recuerdo que esa vez saliste a ver la camioneta y que estabas bien volada, bien bonito.</p>
+            <img src="./src/imagen3.jpg" class="imagen" height="350" width="300">
             <button class="boton" onclick="cambiarPagina(4)">Siguiente →</button>
         </div>
         
         <div class="pagina hidden" id="pagina4">
-            <h3>Recuerdo 4</h3>
-            <p>Gracias por estos momentos inolvidables. ❤️</p>
-            <img src="imagen4.jpg" class="imagen">
+            <h3>❤️ Recuerdo 4</h3>
+            <p class="texto">Y está es de las últimas fotos que tenemos juntos, solo ojalá no sea la ultima de ultimas, esa vez recuerdo que no tomé muchas esa vez que viniste porque no pensé que fueramos a pasar por está separación, solo debí tomar mas fotos de cuando te tuve tal cual como dice esa canción jaja, debo apender a valorar más tanto momentos personas, y todo. </p>
+            <img src="./src/imagen4.jpg" class="imagen" style="max-width: 70%; max-height: 500px;">
+            <button class="boton" onclick="cambiarPagina(5)">Siguiente →</button>
+        </div>
+        
+        <div class="pagina hidden" id="pagina5">
+            
+            <p class="mensaje-final">Y por último Quería decirte lo mucho que valoro cada momento que hemos compartido. 
+               Cada sonrisa, cada palabra y cada instante juntos han significado mucho para mí. 
+               Espero que este pequeño álbum te haga recordar lo especial que eres y que fuiste para mí, ya no debería de hacer estás cosas
+               Pero aun no puedo evitarlo, espero que te guste y que te haga recordar lo mucho que te amo y que extraño que seas mía.
+               No entiendo mi necesidad de hacer esto, al pasar por cosas así me vuelvo tan vulnerable tan extraño, siendote sincero
+               se que no estoy del todo bien que mi cabeza funciona muy raro, y nuevamente no es necesario que me digas algo sobre esto.
+               Es algo que se me ocurrió hacer, por qué? no sé. 
+
+            </p>
             <button class="boton" onclick="cambiarPagina(1)">Volver al Inicio</button>
         </div>
     </div>
